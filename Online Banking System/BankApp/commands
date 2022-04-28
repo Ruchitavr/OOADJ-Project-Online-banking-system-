@@ -1,0 +1,7 @@
+create database bank;
+use bank;
+create table customer (actnum integer primary key, acttype varchar(2), balance integer, branch varchar(15), name varchar(30), emailId varchar(30), loginid varchar(20), password varchar(20), status varchar(20));
+
+create table atm (actnum integer , adharCard varchar(10), name varchar(30), emailId varchar(30), mobileNum varchar(10), type varchar(20), foreign key (actnum) references customer(actnum));
+
+create table transaction (Date date, trans_type varchar(20), Amount integer, Description varchar(50));
